@@ -3,7 +3,7 @@
   <div class="inner">
     <%# ログインしているときは以下を表示する %>
       <div class="greeting">
-        <% if user_signed_in? && current_user.id == @prototype.user_id %>
+        <% if user_signed_in? && @prototype && current_user.id == @prototype.user_id %>
         <p>こんにちは、 </p>
         <%= link_to "#{current_user.name}さん", user_path(current_user), class: :greeting__link%>
         <% end %>
